@@ -34,7 +34,7 @@ def save_csv():
         'Description': '', 'Location': '', 'Private': ''
     })
     # 将 DataFrame 存储为 csv, index 表示是否显示行名，default=True
-    dataframe.to_csv("lunar_birthday.csv", index=False, sep=',', encoding='gbk')
+    dataframe.to_csv("lunar_birthday.csv", index=False, sep=',', encoding='utf-8')
     print("保存成功")
 
 
@@ -59,7 +59,7 @@ for key in dict_a:
     in_ymd = dict_a[key].split(',')
     year = int(in_ymd[0])
     for i in range(year, 2101):
-        lst_person.append(key + "的农历生日")
+        lst_person.append("🎂" + key + "的农历生日")
         lst_date.append(get_solar_cal(year, in_ymd[1], in_ymd[2]))
         year += 1
 save_csv()
