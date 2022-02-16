@@ -16,9 +16,10 @@
 修改 `lunar_calendar_csv.py` 中的部分参数：
 
 ```
-# 设置姓名和对应的阳历生日，如 Nekoha 阳历生日为 2016/6/24，设置如下
-person = 'Nekoha'
-lst_lunardate = get_lunardate(2016, 6, 24)
+# 设置日历类型，阳历为 1，阴历为 2
+cal_type = 1
+# 用字典的形式写入联系人生日，{联系人称呼：生日}
+dict_b = {'Nekoha ': '2016, 6, 24', 'Rikka': '2002, 12, 5'}
 ```
 
 ## 运行脚本
