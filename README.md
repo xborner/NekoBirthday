@@ -34,4 +34,4 @@ python3 lunar_calendar_csv.py
 
 脚本运行完成后会生成 [lunar_birthday.csv](./lunar_birthday.csv) 文件，将文件导入到谷歌日历即可。导入方法参照：[将活动导入到 Google 日历](https://support.google.com/a/users/answer/37118) 。
 
-注意导入的数据无法批量删除，建议新建一个日历专门存放农历生日数据。
+注意导入的数据无法批量删除，建议新建一个日历专门存放农历生日数据。（新增了批量删除活动功能，可参考 [批量删除谷歌日历活动](./bulk_del_cal_events/README.md)）
