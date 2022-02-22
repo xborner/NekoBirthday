@@ -7,6 +7,7 @@
 # * Description: 批量删除谷歌日历活动
 # * *****************************************************************************
 import re
+import datetime
 
 
 def get_ics_file(file_name):
@@ -34,10 +35,25 @@ def save_file(str1, file_name):
     print("新的 ics 文件保存成功")
 
 
+def get_dates(start_date, end_date):
+    # 返回时间段内的所有日期
+    # 输入开始日期、结束日期（例：'20220126', '20220325'），返回时间列表（例：['20220126', '20220127'...]）
+    list = []
+    datestart = datetime.datetime.strptime(start_date, '%Y%m%d')
+    dateend = datetime.datetime.strptime(end_date, '%Y%m%d')
+    list.append(datestart.strftime('%Y%m%d'))
+    while datestart < dateend:
+        datestart += datetime.timedelta(days=1)
+        list.append(datestart.strftime('%Y%m%d'))
+    return list
+
+
 # 设置 ics 文件名称
 ics_file_name = '123.ics'
 # 指定需要删除日历活动对应的日期
 del_date = ('20220220', '20220221', '20220222', '20220223', '20220224', '20220225', '20220226')
+# 像上面这种连续的时间可以简写成下面这种形式
+# del_date = get_dates('20220220', '20220226')
 
 ics_var = get_ics_file(ics_file_name)
 for i in del_date:
